@@ -8,37 +8,29 @@
   }); 
 
 
-  // owlCarousel
-  $(".brand-active").owlCarousel({
-    loop: true,
-    margin: 30,
-    items: 6,
-    navText: [
-      '<i class="fa fa-angle-left"></i>',
-      '<i class="fa fa-angle-right"></i>'
-    ],
-    nav: false,
-    dots: false,
-    responsive: {
-      0: {
-        items: 2
-      },
-      767: {
-        items: 3
-      },
-      992: {
-        items: 6
-      }
-    }
-  });
+  const counterUp = window.counterUp.default
 
-  /* magnificPopup img view */
-  $(".popup-image").magnificPopup({
-    type: "image",
-    gallery: {
-      enabled: true
-    }
-  }); 
+  const callback = entries => {
+      entries.forEach( entry => {
+          const el = entry.target
+          if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+              counterUp( el, {
+                  duration: 1500,
+                  delay: 30,
+              } )
+              el.classList.add( 'is-visible' )
+          }
+      } )
+  }
+
+  const IO = new IntersectionObserver( callback, { threshold: 1 } )
+
+  const el = document.querySelectorAll( '.counter' )
+
+
+  el.forEach(els => {
+      IO.observe( els )
+  }) 
 
  
 })(jQuery);
