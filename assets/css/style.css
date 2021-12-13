@@ -29,6 +29,7 @@ p {
     color: var(--darkGray);
     line-height: 32px;
     letter-spacing: 0.3px;
+    font-weight: 300;
 }
 
   
@@ -174,6 +175,9 @@ a.thm_btn:focus-within {
   position: static;
 }
 
+.menu-area ul li.active_sub ul.mega_menu {
+}
+
 .menu-area ul li ul.mega_menu li:first-child {margin-left: 10%;}
 
 .menu-area nav ul li a {
@@ -184,6 +188,14 @@ a.thm_btn:focus-within {
   font-weight: 500;
   transition: .3s;
   margin-left: 45px;
+}
+
+a.active_sub p {
+    color: var(--blue);
+}
+
+a.active_sub span {
+    color: var(--blue);
 }
 
 .menu-area nav ul li a.active:after {
@@ -290,20 +302,30 @@ button.Contact_btn {
     padding: 10px 26px;
     border-radius: 8px;
     font-size: 14px;
-    letter-spacing: 2px;
     width: max-content;
     margin-left: auto;
     display: block;
     transition: .3s;
+    letter-spacing: 0.2px;
 }
 
-button.Contact_btn:focus-within {
+button.Contact_btn.cnp:hover {
+    box-shadow: none;
+}
+
+button.Contact_btn.cnp:hover {
+    background: no-repeat;
+    color: var(--blue);
+}
+
+button.Contact_btn.cnt:focus-within {
     box-shadow: inset 2px 4px 20px #9D304B;
 }
 
-button.Contact_btn:hover {
-    background: var(--blue);
-    color: #fff;
+button.Contact_btn:hover {box-shadow: 2px 4px 20px rgba(196, 212, 217, 0.5);}
+
+button.Contact_btn:focus-within {
+    box-shadow: inset 2px 4px 20px rgba(196, 212, 217, 0.5);
 }
 
 /* humbergar */
@@ -664,6 +686,54 @@ footer.footer-area .logo a img {
     margin-bottom: 30px;
 }
 .crt {color: #A3A3A9;font-size: 14px;display: block;}
+.footer_btm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footer_btm a {
+    margin-bottom: 12px;
+}
+
+a.l_btn:hover {
+    text-decoration: underline;
+}
+
+.cookie {
+    background: var(--powerBlue);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.cookie_wrp {
+    display: flex;
+    align-items: center;
+    max-width: 1300px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.cookie_wrp p {
+    margin-bottom: 0;
+}
+
+.cookie_btn a {
+    color: var(--blue);
+    font-weight: 500;
+    text-decoration: underline;
+    margin-right: 40px;
+}
+
+.cookie_btn a.thm_btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 30px;
+    margin-right: 0;
+}
 /* home page end  */
 
 
@@ -673,7 +743,9 @@ button.cnt{
   color: #fff;
 }
 
-button.cnt:hover {background: var(--offRed);}
+button.cnt:hover {
+    box-shadow: 2px 4px 25px rgba(157, 48, 75, 0.25);
+}
 
 .hero_title{
     text-align: center;
@@ -764,12 +836,20 @@ section.contact-blog{position: relative;}
     border: 1px solid #005395;
 }
 
+.contact_box label textarea:focus-within {
+    border-color: var(--offRed);
+}
+
 .contact_box label input {
     display: block;
     width: 100%;
     border: none;
     border-bottom: 1px solid #005395;
     padding: 12px 0;
+}
+
+.contact_box label input:focus-within {
+    border-color: var(--offRed);
 }
 .cb_left{
     margin: 133px 0;
@@ -860,6 +940,11 @@ section#news .news_wrp {
     flex-wrap: wrap;
 }
 .news_blk {box-shadow: 2px 4px 20px rgba(0, 83, 149, 0.05);background: #F9F9FB;width: 255px;height: 290px;padding: 40px 25px 20px;margin-bottom: 30px;}
+
+.news_blk:hover {
+    border-bottom: 7px solid var(--powerBlue);
+    transform: translateY(-5px);
+}
 
 section#news .news_blk.large {
     width: 727px;

@@ -172,10 +172,8 @@ section#news .news_blk.large {width: 350px;}
         margin-bottom: 50px;
     }
     
-    a.crt {
-        width: max-content;
-        margin: auto;
-        display: block;
+    .footer-area {
+    padding-bottom: 25px;
     }
     .blog_img img {
         width: 100%;
@@ -502,12 +500,15 @@ section.proof-area {
     }
     
     a.crt {
-        text-align: center;
     }
     
     footer.footer-area {
         padding: 50px 0 30px;
     }
+    .footer_btm {
+    flex-direction: column-reverse;
+    margin-top: 0px;
+}
     /*Home Page End =========== */
 
  
