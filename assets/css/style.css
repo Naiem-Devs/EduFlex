@@ -297,6 +297,10 @@ button.Contact_btn {
     transition: .3s;
 }
 
+button.Contact_btn:focus-within {
+    box-shadow: inset 2px 4px 20px #9D304B;
+}
+
 button.Contact_btn:hover {
     background: var(--blue);
     color: #fff;
